@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Print</title>
+       
+    </head>
+    <body>
+        <button onclick="generatePDF()">Print</button>
+        <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+        <script>
+          function generatePDF() {
+            const element = document.getElementById("content");
+            html2pdf()
+              .from(element)
+              .save();
+          }
+          </script>
+        <div id="content">
+            <h3 style="text-align: center;">Stock Report</h3>
+            <pre>
+                                Total Stock
+                                
+            </pre>
+            <hr>
+            <pre>
+                From 1 Jan 2020                                  To 31 Jun 2020
+            </pre>
+            <hr>
+            <table style="width: 100%;">
+                <tr>
+                    <th>Date</th>
+                    <th>Stock Id</th>
+                    <th>Item</th>
+                    <th>Bramd</th>
+                    <th>Quantity</th>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

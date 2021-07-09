@@ -1,0 +1,68 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration</title>
+<style>
+	td{
+		padding: 5px 10px;
+		text-align: top;
+	}
+	#submit{
+	width:100%;
+	border: none;
+	margin-top:10px;
+	color:white;
+	background-color:#2ECC71;
+	padding:5px;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+	margin-bottom:20px;
+	
+}
+</style>
+ </head>
+ <body style= "background-image:url('2.jpg'); background-repeat: no-repeat; background-size: cover;">
+	<div id="main" style ="width: 480px; margin :auto; background-color:rgba(256,256,256,0.3);; padding: 20px;display: table;border: 1px solid black;" >
+	<center>
+	<h2 style="color: #0288D1 ;">New Registration</h2>
+	<form name="f1" action="login.html" onsubmit="return(validate());">
+	<table width="100%">
+	<tr><td><label >Name:<label></td><td>
+	<input type ="text" name="i1" required/><br></td></tr>
+	<tr><td><label>Rollno:<label></td><td>
+	<input type ="text" required/><br></td></tr>
+	<tr><td><label>email id:<label></td><td>
+	<input type ="text" required/><br></td></tr>
+	<tr><td><label>Gender: </label></td><td>
+		<input type="radio" id="Male" name="people" >
+		<label for="Male">Male</label>
+<input type="radio" id="Female" name="people" >
+<label for="Female">Female</label><br></td></tr>
+<tr><td><label>MobileNo:<label></td><td>
+	<input type ="text" required/><br></td></tr>
+	<tr><td><label>Password:</label></td>
+		<td><input type="password"  name="p1" required/></td></tr>
+		<tr><td><label> Conforim Password:</label></td>
+			<td><input type="password" name="p2" required/></td></tr>
+	<tr><td><label>Address:</label></td><td>
+	<textarea rows="6" cols="45" required></textarea><br></td></tr>
+	</table>
+	</center>
+	<input name="submit" type="submit" id="submit" value ="Submit"/>
+</form>
+	</div>
+	<script>
+		function validate(){
+			if(document.f1.p1.value!=document.f1.p2.value){
+				window.alert("confirm password and password are not same");
+				return false;
+			}
+			return true;
+		}
+	</script>
+
+ </body>
+ </html>

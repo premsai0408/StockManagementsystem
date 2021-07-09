@@ -1,0 +1,309 @@
+<html>
+    <head><title>dashboard</title>
+    <style>
+      .dropdown {
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+        .tablinks {
+            width:100%;
+            font-size: large;
+            padding: 22px 16px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .tab button:hover {
+  background-color: #ddd;
+}
+
+
+.tab button.active {
+  background-color: #ccc;
+}
+.tabcontent {
+  float: right;
+  display: none;
+  width: 80%;
+  overflow: hidden;
+}
+
+.show {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  
+
+}
+    </style>
+    <script>function f1(){
+      document.getElementById("defaultOpen").click();}
+       function openC(evt, c) {
+                  var i, tabcontent, tablinks;
+                  tabcontent = document.getElementsByClassName("tabcontent");
+                  for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                  }
+                  tablinks = document.getElementsByClassName("tablinks");
+                  for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                  }
+                  document.getElementById(c).style.display = "block";
+                  evt.currentTarget.className += " active";
+                }
+                
+    </script>
+    </head>
+    <body onload="f1()">
+        <div style="width:100%;font-style: oblique;background-color: khaki;color:limegreen;height:60px;">
+         <div style="width: 90%; float:left;text-align: center;font-size:35px;">STOCK MANAGEMENT SYSTEM</div>
+        <div style="width:10%;float:right;text-align: right;">
+          <div class="dropdown">
+            <button class="dropbtn"> 
+              <img src="images.jpg" width=60px height=60px/>
+            </button>
+            <div class="dropdown-content">
+              <a href="profile.html">Profile</a>
+              <a href="login.html">Logout</a>  
+            </div>
+          </div> 
+
+          </div></div>
+        <div class="tab" style="height:1200px; width:19%;float: left;overflow: hidden;background-color: #f1f1f1;border:greenyellow solid 1px;margin-top: 0px; "> 
+        
+            <button class="tablinks" onclick="openC(event, 'home')" id="defaultOpen">Home</button>
+            <button class="tablinks" onclick="openC(event, 'cat')" >Catalog</button>
+            <button class="tablinks" onclick="openC(event, 'stock')">Stocks</button>
+            <button class="tablinks" onclick="openC(event, 'fp')">Frequent products</button>
+            <button class="tablinks" onclick="openC(event, 'os')">Old Stock</button>
+            <button class="tablinks" onclick="openC(event, 'report')">Report</button>
+        </div>
+            
+            <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+            <div id="home" class="tabcontent" >
+              <div id="ho" style="width: 60%;height:450px;float: left; border:2px yellowgreen solid; border-radius: 2px;  ">
+                <script>
+                anychart.onDocumentReady(function() {
+
+                var data = {
+                  header: ["ITEM", "TOTAL"],
+                  rows: [
+                    ["shoes", 150],
+                    ["watches", 870],
+                    ["lipsticks", 1750],
+                    ["handbags", 100],
+                    ["Necklace", 242],
+                    ["Bangles", 2500],
+                    ["Meckup kid", 500]
+                ]};
+              
+                
+                var chart = anychart.column();
+              
+                
+                chart.data(data);
+              
+                
+                chart.title("Stock details chart");
+              
+                
+                chart.container("ho");
+                chart.draw();
+              });
+            </script>
+            </div>
+             <div  style="width: 39%;float:right; border:2px yellowgreen solid; border-radius: 2px;  ">
+              <center><p style="height:22px; background-color: yellowgreen;padding: 0%;margin: 0%;color: white; font-size: 20px;"  >Product Chart</p></center>
+                 <table >
+                    <tr><th>SL.NO</th><th>ITEM</th><th>AVAILABLE</th></tr>
+                    <tr><td>1</td><td>Shoes</td><td>150</td></tr>
+                    <tr><td>2</td><td>watches</td><td>870</td></tr>
+                    <tr><td>3</td><td>lipsticks</td><td>1750</td></tr>
+                    <tr><td>4</td><td>handbags</td><td>100</td></tr>
+                    <tr><td>5</th><td>Necklace</td><td>242</td></tr>
+                 </table>
+             </div> </div>
+             <div id="cat" class="tabcontent">
+               <div style="width: 48%;float:left; border:2px yellowgreen solid; border-radius: 2px; padding: 2px; margin: 2px;">
+                <center><p style="height:22px; background-color: yellowgreen;padding: 0%;margin: 0%;color: white; font-size: 20px;"  >Shoes</p></center>
+                <table >
+                    <tr><th>SL.NO</th><th>Brand</th><th>Style</th></tr>
+                    <tr><td>1</td><td>B1</td><td>g56</td></tr>
+                    <tr><td>2</td><td>B2</td><td>d45</td></tr>
+                    <tr><td>3</td><td>B3</td><td>d1</td></tr>
+                    <tr><td>4</td><td>B1</td><td>s0</td></tr>
+                    <tr><td>5</th><td>B4</td><td>S3</td></tr>
+                 </table></div><div style="width: 48%;float:right; border:2px yellowgreen solid; border-radius: 2px; padding: 2px;margin: 2px; ">
+                  <center><p style="height:22px; background-color: yellowgreen;padding: 0%;margin: 0%;color: white; font-size: 20px;"  >Watches</p></center>
+                 <table >
+                    <tr><th>SL.NO</th><th>Brand</th><th>Style</th></tr>
+                    <tr><td>1</td><td>r1</td><td>o90</td></tr>
+                    <tr><td>2</td><td>r2</td><td>d5d</td></tr>
+                    <tr><td>3</td><td>t3</td><td>d1</td></tr>
+                    <tr><td>4</td><td>i1</td><td>p0</td></tr>
+                    <tr><td>5</th><td>w4</td><td>r3</td></tr>
+                 </table></div><div style="width: 48%;float:left; border:2px yellowgreen solid; border-radius: 2px; padding: 2px; margin: 2px;">
+                  <center><p style="height:22px; background-color: yellowgreen;padding: 0%;margin: 0%;color: white; font-size: 20px;"  >Handbags</p></center>
+                 <table >
+                    <tr><th>SL.NO</th><th>Brand</th><th>Style</th></tr>
+                    <tr><td>1</td><td>y1</td><td>q26</td></tr>
+                    <tr><td>2</td><td>y2</td><td>o5</td></tr>
+                    <tr><td>3</td><td>y3</td><td>p9</td></tr>
+                    <tr><td>4</td><td>p1</td><td>r5</td></tr>
+                    <tr><td>5</th><td>t4</td><td>S6</td></tr>
+                 </table></div><div style="width: 48%;float:right; border:2px yellowgreen solid; border-radius: 2px; padding: 2px;margin: 2px; ">
+                  <center><p style="height:22px; background-color: yellowgreen;padding: 0%;margin: 0%;color: white; font-size: 20px;"  >Lipsticks</p></center>
+                 <table >
+                    <tr><th>SL.NO</th><th>Brand</th><th>Style</th></tr>
+                    <tr><td>1</td><td>o1</td><td>g56</td></tr>
+                    <tr><td>2</td><td>w2</td><td>d45</td></tr>
+                    <tr><td>3</td><td>f3</td><td>d1</td></tr>
+                    <tr><td>4</td><td>f1</td><td>s0</td></tr>
+                    <tr><td>5</th><td>k4</td><td>S3</td></tr>
+                 </table></div>
+
+             </div>
+             <div id="stock" class="tabcontent">
+               <div style=" border:2px yellowgreen solid; border-radius: 2px; margin: 5px;  ">
+                <center><p style="height:22px; background-color: yellowgreen;padding: 0%;margin: 0%;color: white; font-size: 20px;"  >Total Stock</p></center>
+                <table >
+                    <tr><th>SL.NO</th><th>ITEM</th><th>brand</th><th>design</th><th>AVAILABLE</th></tr>
+                    <tr><td>1</td><td>Shoes</td><td>w3</td><td>d45</td><td>10</td></tr>
+                    <tr><td>2</td><td>Shoes</td><td>B43</td><td>y6</td><td>52</td></tr>
+                    <tr><td>3</td><td>Shoes</td><td>py5</td><td>do9</td><td>51</td></tr>
+                    <tr><td>4</td><td>Shoes</td><td>g34</td><td>w34</td><td>56</td></tr>
+                    <tr><td>5</td><td>watches</td><td>e4</td><td>g56</td><td>37</td></tr>
+                    <tr><td>6</td><td>watches</td><td>r4</td><td>h7</td><td>47</td></tr>
+                    <tr><td>7</td><td>watches</td><td>y7</td><td>g5</td><td>45</td></tr>
+                    <tr><td>10</td><td>watches</td><td>d3</td><td>45</td><td>60</td></tr>
+                    <tr><td>11</td><td>lipsticks</td><td>i7</td><td>t4</td><td>175</td></tr>
+                    <tr><td>12</td><td>lipsticks</td><td>f5</td><td>u7</td><td>750</td></tr>
+                    <tr><td>13</td><td>lipsticks</td><td>h56</td><td>h4</td><td>150</td></tr>
+                    <tr><td>14</td><td>handbags</td><td>rg3</td><td>k8</td><td>93</td></tr>
+                    <tr><td>15</td><td>handbags</td><td>s34</td><td>kl8</td><td>140</td></tr>
+                    <tr><td>16</td><td>handbags</td><td>l6</td><td>w3</td><td>75</td></tr>
+                    <tr><td>17</td><td>handbags</td><td>s3</td><td>opy45</td><td>70</td></tr>
+                    <tr><td>18</td><td>handbags</td><td>b5</td><td>nm6</td><td>10</td></tr>
+                    <tr><td>19</td><td>Necklace</td><td>n5</td><td>g56</td><td>22</td></tr>
+                    <tr><td>20</td><td>Necklace</td><td>b5</td><td>frg5</td><td>42</td></tr>
+                    <tr><td>21</td><td>Necklace</td><td>v5</td><td>g56</td><td>24</td></tr>
+                 </table></div>
+             </div>
+             <div id="fp" class="tabcontent">
+               <div style=" border:2px yellowgreen solid; border-radius: 2px; margin:5px; ">
+                <center><p style="height:22px; background-color: yellowgreen;padding: 0%;margin: 0%;color: white; font-size: 20px;"  >Frequent Product</p></center>
+                <table >
+                    <tr><th>SL.NO</th><th>ITEM</th><th>brand</th><th>design</th></tr>
+                    <tr><td>1</td><td>Shoes</td><td>w3</td><td>d45</td></tr>
+                    <tr><td>2</td><td>Shoes</td><td>B43</td><td>y6</td></tr>
+                    <tr><td>3</td><td>watches</td><td>d3</td><td>45</td></tr>
+                    <tr><td>4</td><td>lipsticks</td><td>i7</td><td>t4</td></tr>
+                    <tr><td>5</td><td>lipsticks</td><td>f5</td><td>u7</td></tr>
+                    <tr><td>6</td><td>handbags</td><td>s3</td><td>opy45</td></tr>
+                    <tr><td>7</td><td>handbags</td><td>b5</td><td>nm6</td></tr>
+                    <tr><td>8</td><td>Necklace</td><td>n5</td><td>g56</td></tr>
+                </table></div>
+             </div >
+             <div id="os" class="tabcontent">
+              <div style=" border:2px yellowgreen solid; border-radius: 2px; margin:5px; ">
+                <center><p style="height:22px; background-color: yellowgreen;padding: 0%;margin: 0%;color: white; font-size: 20px;"  >Old Stock</p></center>
+                <table >
+                    <tr><th>SL.NO</th><th>ITEM</th><th>brand</th><th>design</th></tr>
+                    <tr><td>1</td><td>Shoes</td><td>w3</td><td>d45</td></tr>
+                    <tr><td>2</td><td>Shoes</td><td>B43</td><td>y6</td></tr>
+                    <tr><td>3</td><td>watches</td><td>d3</td><td>45</td></tr>
+                    <tr><td>4</td><td>lipsticks</td><td>i7</td><td>t4</td></tr>
+                    <tr><td>5</td><td>lipsticks</td><td>f5</td><td>u7</td></tr>
+                    <tr><td>6</td><td>handbags</td><td>s3</td><td>opy45</td></tr>
+                    <tr><td>7</td><td>handbags</td><td>b5</td><td>nm6</td></tr>
+                    <tr><td>8</td><td>Necklace</td><td>n5</td><td>g56</td></tr>
+                </table></div>
+             </div>
+             <div id="report" class="tabcontent" >
+              <div style=" border:2px yellowgreen solid; border-radius: 2px; margin:100px; width:700px; ">
+                <center><p style="height:22px; background-color: yellowgreen;padding: 0%;margin: 0%;color: white; font-size: 20px;"  >Report</p></center>
+                 
+                 <form><br><br>
+                   <table>
+                     <tr><td><label>Sales Report:</label></td><td><input  type="text" placeholder="From"
+                      onfocus="(this.type='date')" /></td><td><input  type="text" placeholder="To"
+                        onfocus="(this.type='date') "/></td><td> 
+                          <a href="page2.html" target="_blank" class="show">Show</a>
+                          </td></tr>
+                     <tr style="background-color: white;"><td> <label>Stock Report:</label></td><td> <input  type="text" placeholder="From"
+                      onfocus="(this.type='date')" /></td><td><input  type="text" placeholder="To"
+                        onfocus="(this.type='date') "/></td><td>  <a href="page3.html" target="_blank" class="show">Show</a> </td></tr>
+                     <tr><td><label>Purchase Stock :</label></td><td> <input  type="text" placeholder="From"
+                      onfocus="(this.type='date')" /></td><td><input  type="text" placeholder="To"
+                        onfocus="(this.type='date') "/></td><td>  <a href="page2.html" target="_blank" class="show">Show</a> </td></tr>
+                   </table>
+                  </br><br>
+                   <table style="margin:10px; width: 650px;">
+                     <tr><td>Total No of Stock</td><td>19</td></tr>
+                     <tr style="background-color: white;"><td>Total Sales</td><td>Rs 123544</td></tr>
+                     <tr><td>Total No of Suppliers</td><td>32</td></tr>
+                   </table>
+                  </div>
+                 </form>
+             </div>
+        </div>
+    </body>
+</html>

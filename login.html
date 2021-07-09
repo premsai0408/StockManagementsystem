@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>
+            Login
+        </title>
+        <style>
+            .inputvalues{
+	width:440pX;
+	margin:0 auto;
+	padding:5px;
+    border: none;
+    border-bottom: solid black 1px;
+    background: inherit;
+}
+#submit{
+	width: 480px;
+    border:none;
+	margin-top:10px;
+	color:white;
+	background-color:#2ECC71;
+	padding:5px;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+	margin-bottom:20px;
+	
+}
+        </style>
+    </head>
+    <body style="background-image:url('2.jpg'); background-repeat: no-repeat; background-size: cover;"  >
+    <h1 style="text-align: center; padding: 25px;"> Stock Maintainance System</h1>
+    <div id="main" style ="width: 480px; margin :auto; background-color:rgba(256,256,256,0.3);; padding: 20px;display: table;border: 1px solid black; " >
+		
+			
+		<center><img src ="logo.jpg" class="img" height=150px width=150px  style ="border-radius:100%; " /></center>
+	<form action="page1.html" method="post"class="form" name="myform" onsubmit="return(validate());" >
+	<label>Username:</label><br>
+	<input name= "username"type="text" class="inputvalues" placeholder ="Type your Username" required/><br>
+	<label>Password:</label><br>
+	<input name= "password" type="password" class="inputvalues" placeholder ="Type your password"required/><br>
+	
+	<input name="submit" type="submit" id="submit" value ="Login"/>
+	</form>
+	<script>
+		function validate(){
+			var x=document.myform.username.value;
+			var y=document.myform.password.value;
+			if(x=="admin"&&y=="admin"){
+				return true;
+			}
+			else{
+				window.alert("username/password is entered wrong");
+			return false;}
+		}
+
+	</script>
+	<div style="width:100%;">
+<div style="width:50%; float: left;"><a href="newre.htm">New User</a></div>
+<div style="width:40%; float:right;"><a href="forget.htm">Forget password</a></div>
+    </br>
+</div>
+    
+    
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Print</title>
+       
+    </head>
+    <body>
+        <button onclick="generatePDF()">Print</button>
+        <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+        <script>
+          function generatePDF() {
+            const element = document.getElementById("content");
+            html2pdf()
+              .from(element)
+              .save();
+          }
+          </script>
+        <div id="content">
+            <h3 style="text-align: center;">Sales Report</h3>
+            <pre>
+                                Total Sales
+                                Recevied Amount
+                                Total OutStanding
+            </pre>
+            <hr>
+            <pre>
+                From 1 Jan 2020                                  To 31 Jun 2020
+            </pre>
+            <hr>
+            <table style="width: 100%;">
+                <tr>
+                    <th>Date</th>
+                    <th>Sales Id</th>
+                    <th>Customer</th>
+                    <th>Paid</th>
+                    <th>Balance</th>
+                    <th>Total</th>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
